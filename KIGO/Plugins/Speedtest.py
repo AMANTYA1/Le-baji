@@ -6,8 +6,8 @@ import wget
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from Yukki import BOT_ID, SUDOERS, app
-from Yukki.Utilities.formatters import bytes
+from KIGO import BOT_ID, SUDOERS, app
+from KIGO.Utilities.formatters import bytes
 
 __MODULE__ = "Speedtest"
 __HELP__ = """
@@ -15,6 +15,7 @@ __HELP__ = """
 /speedtest 
 - Check Server Latency and Speed.
 
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 
 
