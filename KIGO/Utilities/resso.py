@@ -1,4 +1,4 @@
-from kIGO import BOT_USERNAME
+from KIGO import BOT_USERNAME
 from KIGO.Database.spotifylimit import get_playlist_limit_sudoers
 from config import PL_LIMIT
 import requests
