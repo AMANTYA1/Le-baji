@@ -1,10 +1,10 @@
-# dont steal these
+# dont steal these kyu bee
 client_id = "817ef3b667ae41fa904568b4eeaee96d"
 client_secret = "8130539ee3cf4b30bc24d2f694a60838"
 
 from config import PL_LIMIT
-from Yukki import BOT_USERNAME
-from Yukki.Database.spotifylimit import get_playlist_limit_sudoers
+from KIGO import BOT_USERNAME
+from KIGO.Database.spotifylimit import get_playlist_limit_sudoers
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
