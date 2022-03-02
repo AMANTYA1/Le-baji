@@ -1,5 +1,5 @@
 
-from Yukki import BOT_NAME
+from KIGO import BOT_NAME
 import os
 import random
 from os import path
