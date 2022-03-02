@@ -13,7 +13,7 @@ from KIGO import BOT_USERNAME, MUSIC_BOT_NAME, app, db_mem
 from KIGO.Core.PyTgCalls import Queues
 from KIGO.Core.PyTgCalls.Converter import convert
 from KIGO.Core.PyTgCalls.Downloader import download
-from KIGO.Core.PyTgCalls.Yukki import (pause_stream, resume_stream,
+from KIGO.Core.PyTgCalls.KIGO import (pause_stream, resume_stream,
                                         skip_stream, skip_video_stream,
                                         stop_stream)
 from KIGO.Database import (is_active_chat, is_music_playing, music_off,
