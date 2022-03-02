@@ -2,7 +2,7 @@ from math import ceil
 
 from pyrogram.types import InlineKeyboardButton
 
-from Yukki import MOD_LOAD, MOD_NOLOAD
+from KIGO import MOD_LOAD, MOD_NOLOAD
 
 
 class EqInlineKeyboardButton(InlineKeyboardButton):
