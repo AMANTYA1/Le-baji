@@ -13,8 +13,8 @@ from pyrogram.errors import MessageNotModified
 from pyrogram.types import (InlineKeyboardButton, InlineKeyboardMarkup,
                             Message, ReplyKeyboardMarkup)
 
-from Yukki import SUDOERS, app
-from Yukki.Utilities.tasks import add_task, rm_task
+from KIGO import SUDOERS, app
+from KIGO.Utilities.tasks import add_task, rm_task
 
 # Eval and Sh module from WBB
 
@@ -34,6 +34,8 @@ Only for Sudo Users.
 
 /broadcast_pin_loud [Message or Reply to a Message]
 - Broadcast any message to Bot's Served Chats with message getting Pinned in chat [Enabled Notifications].
+
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 
 
