@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from pyrogram.errors.exceptions import FloodWait
 
 from KIGO import MUSIC_BOT_NAME, app, db_mem
-from kIGO.Utilities.formatters import bytes
+from KIGO.Utilities.formatters import bytes
 from KIGO.Utilities.ping import get_readable_time
 
 
