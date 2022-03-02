@@ -12,61 +12,53 @@ from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
                             Voice)
 from youtube_search import YoutubeSearch
 
-import KIGO
-from KIGO import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
+import Yukki
+from Yukki import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
                    MUSIC_BOT_NAME, app, db_mem)
-from KIGO.Core.PyTgCalls.Converter import convert
-from KIGO.Core.PyTgCalls.Downloader import download
-from KIGO.Core.PyTgCalls.Tgdownloader import telegram_download
-from KIGO.Database import (get_active_video_chats, get_video_limit,
+from Yukki.Core.PyTgCalls.Converter import convert
+from Yukki.Core.PyTgCalls.Downloader import download
+from Yukki.Core.PyTgCalls.Tgdownloader import telegram_download
+from Yukki.Database import (get_active_video_chats, get_video_limit,
                             is_active_video_chat)
-from KIGO.Decorators.assistant import AssistantAdd
-from KIGO.Decorators.checker import checker
-from KIGO.Decorators.logger import logging
-from KIGO.Decorators.permission import PermissionCheck
-from KIGO.Inline import (livestream_markup, playlist_markup, search_markup,
+from Yukki.Decorators.assistant import AssistantAdd
+from Yukki.Decorators.checker import checker
+from Yukki.Decorators.logger import logging
+from Yukki.Decorators.permission import PermissionCheck
+from Yukki.Inline import (livestream_markup, playlist_markup, search_markup,
                           search_markup2, url_markup, url_markup2)
-from KIGO.Utilities.changers import seconds_to_min, time_to_seconds
-from KIGO.Utilities.chat import specialfont_to_normal
-from KIGO.Utilities.stream import start_stream, start_stream_audio
-from KIGO.Utilities.theme import check_theme
-from KIGO.Utilities.thumbnails import gen_thumb
-from KIGO.Utilities.url import get_url
-from KIGO.Utilities.videostream import start_stream_video
-from KIGO.Utilities.youtube import (get_yt_info_id, get_yt_info_query,
+from Yukki.Utilities.changers import seconds_to_min, time_to_seconds
+from Yukki.Utilities.chat import specialfont_to_normal
+from Yukki.Utilities.stream import start_stream, start_stream_audio
+from Yukki.Utilities.theme import check_theme
+from Yukki.Utilities.thumbnails import gen_thumb
+from Yukki.Utilities.url import get_url
+from Yukki.Utilities.videostream import start_stream_video
+from Yukki.Utilities.youtube import (get_yt_info_id, get_yt_info_query,
                                      get_yt_info_query_slider)
-from KIGO.Utilities.youtube import get_m3u8
+from Yukki.Utilities.youtube import get_m3u8
 from config import get_queue
-from KIGO import BOT_USERNAME, db_mem
-from KIGO.Core.PyTgCalls import Queues
-from KIGO.Core.PyTgCalls.KIGO import (join_live_stream, join_video_stream,
+from Yukki import BOT_USERNAME, db_mem
+from Yukki.Core.PyTgCalls import Queues
+from Yukki.Core.PyTgCalls.Yukki import (join_live_stream, join_video_stream,
                                         stop_stream)
-from KIGO.Database import (add_active_chat, add_active_video_chat,
+from Yukki.Database import (add_active_chat, add_active_video_chat,
                             is_active_chat, music_off, music_on,
                             remove_active_chat)
-from KIGO.Inline import (audio_markup, audio_markup2, primary_markup,
+from Yukki.Inline import (audio_markup, audio_markup2, primary_markup,
                           secondary_markup, secondary_markup2)
-from KIGO.Utilities.timer import start_timer
-from KIGO.Core.PyTgCalls.KIGO import join_stream
-from KIGO.Database import (add_active_chat, add_active_video_chat,
+from Yukki.Utilities.timer import start_timer
+from Yukki.Core.PyTgCalls.Yukki import join_stream
+from Yukki.Database import (add_active_chat, add_active_video_chat,
                             is_active_chat, music_off, music_on)
-from KIGO.Inline import (audio_markup, audio_markup2, primary_markup,
+from Yukki.Inline import (audio_markup, audio_markup2, primary_markup,
                           secondary_markup)
-from KIGO.Utilities.timer import start_timer
+from Yukki.Utilities.timer import start_timer
 
 loop = asyncio.get_event_loop()
 
 async def mplay_stream(message,MusicData):
     if message.chat.id not in db_mem:
         db_mem[message.chat.id] = {}
-    try:
-        read1 = db_mem[message.chat.id]["live_check"]
-        if read1:
-            return await message.reply_text("Live Streaming Playing...Stop it to play music")
-        else:
-            pass
-    except:
-        pass
     callback_data = MusicData.strip()
     callback_request = callback_data.split(None, 1)[1]
     chat_id = message.chat.id
@@ -79,22 +71,35 @@ async def mplay_stream(message,MusicData):
             reply_markup=InlineKeyboardMarkup(buttons),
         )    
     await message.delete()
-    title, duration_min, duration_sec, thumbnail = get_yt_info_id(videoid)
+    (
+        title,
+        duration_min,
+        duration_sec,
+        thumbnail,
+        views,
+        channel
+    ) = get_yt_info_id(videoid)
     if duration_sec > DURATION_LIMIT:
         return await message.reply_text(
             f"**Duration Limit Exceeded**\n\n**Allowed Duration: **{DURATION_LIMIT_MIN} minute(s)\n**Received Duration:** {duration_min} minute(s)"
         )
     mystic = await message.reply_text(f"Processing:- {title[:20]}")
     await mystic.edit(
-        f"**{MUSIC_BOT_NAME} Downloader**\n\n**Title:** {title[:50]}\n\n0% ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
-    )
+   f"""
+**KIGO Music Downloader** !
+- **Title:** `{title[:50]}`
+- **duration** :`{duration_min}`
+[📥](https://t.me/OmFoXD)■■■■■■■■■■■■
+                    """)
     downloaded_file = await loop.run_in_executor(
         None, download, videoid, mystic, title
     )
     raw_path = await convert(downloaded_file)
     theme = await check_theme(chat_id)
     chat_title = await specialfont_to_normal(chat_title)
-    thumb = await gen_thumb(thumbnail, title, user_id, theme, chat_title)
+    thumb = await gen_thumb(
+                        thumbnail, title, message.from_user.id, "NOW PLAYING", views, duration_min, channel
+                    )
     if chat_id not in db_mem:
         db_mem[chat_id] = {}
     await custom_start_stream(
@@ -151,7 +156,12 @@ async def custom_start_stream(
         final_output = await message.reply_photo(
             photo=thumb,
             caption=(
-                f"🎬<b>__Song:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n⏳<b>__Duration:__</b> {duration_min} \n💡<b>__Info:__</b> [Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤<b>__Requested by:__ </b>{message.from_user.mention} \n🚧<b>__Queued at:__</b> <b>#{position}!</b>"
+                f"""
+💡 **Track added to queue**» `{position}`
+🏷 **Name:** [{title[:25]}](https://www.youtube.com/watch?v={videoid}) 
+⏱ **Duration:** `{duration}`
+🎧** Request by:**{user}
+📖 **Info**: [Get Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})"""
             ),
             reply_markup=InlineKeyboardMarkup(buttons),
         )
@@ -174,7 +184,13 @@ async def custom_start_stream(
             videoid, message.from_user.id, duration_min, duration_min
         )
         await mystic.delete()
-        cap = f"🎥<b>__Playing:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n💡<b>__Info:__</b> [Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤**__Requested by:__** {message.from_user.mention}"
+        cap = f"""
+🏷 **Name:** [{title[:25]}](https://www.youtube.com/watch?v={videoid}) 
+⏱ **Duration:** `{duration}`
+💡 **Status:** `Playing Video`
+🎧** Request by:**{user}
+📖 **Info**: [Get Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})
+"""     
         final_output = await message.reply_photo(
             photo=thumb,
             reply_markup=InlineKeyboardMarkup(buttons),
@@ -206,15 +222,7 @@ async def vplay_stream(message,VideoData,mystic):
         else:
             return await message.reply_text("Sorry! Bot only allows limited number of video calls due to CPU overload issues. Other chats are using video call right now. Try switching to audio or try again later")
     if message.chat.id not in db_mem:
-        db_mem[message.chat.id] = {}
-    try:
-        read1 = db_mem[message.chat.id]["live_check"]
-        if read1:
-            return await message.reply_text("Live Streaming Playing...Stop it to play music")
-        else:
-            pass
-    except:
-        pass    
+        db_mem[message.chat.id] = {}  
     callback_data = VideoData.strip()
     callback_request = callback_data.split(None, 1)[1]
     videoid, duration, user_id = callback_request.split("|")    
@@ -233,14 +241,23 @@ async def vplay_stream(message,VideoData,mystic):
             "**Live Stream Detected**\n\nWant to play live stream? This will stop the current playing musics(if any) and will start streaming live video.",
             reply_markup=InlineKeyboardMarkup(buttons),
         )    
-    title, duration_min, duration_sec, thumbnail = get_yt_info_id(videoid)
+    (
+        title,
+        duration_min,
+        duration_sec,
+        thumbnail,
+        views,
+        channel
+    ) = get_yt_info_id(videoid)
     if duration_sec > DURATION_LIMIT:
         return await message.reply_text(
             f"**Duration Limit Exceeded**\n\n**Allowed Duration: **{DURATION_LIMIT_MIN} minute(s)\n**Received Duration:** {duration_min} minute(s)"
         )    
     theme = await check_theme(chat_id)
     chat_title = await specialfont_to_normal(chat_title)
-    thumb = await gen_thumb(thumbnail, title, user_id, theme, chat_title)
+    thumb = await gen_thumb(
+                        thumbnail, title, message.from_user.id, "NOW PLAYING", views, duration_min, channel
+                    )
     nrs, ytlink = await get_m3u8(videoid)
     if nrs == 0:
         return await message.reply_text(
@@ -303,7 +320,12 @@ async def custom_video_stream(
         final_output = await message.reply_photo(
             photo=thumb,
             caption=(
-                f"🎬<b>Video:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n⏳<b>__Duration:__</b> {duration_min} \n💡<b>__Info:__</b> [Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤<b>__Requested by:__ </b>{message.from_user.mention} \n🚧<b>__ Video Queued at:__</b> <b>#{position}!</b>"
+                f"""
+💡 **Track added to queue**» `{position}`
+🏷 **Name:** [{title[:25]}](https://www.youtube.com/watch?v={videoid}) 
+⏱ **Duration:** `{duration}`
+🎧** Request by:**{user}
+📖 **Info**: [Get Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})"""
             ),
             reply_markup=InlineKeyboardMarkup(buttons),
         )        
@@ -330,7 +352,12 @@ async def custom_video_stream(
         buttons = primary_markup(
             videoid, message.from_user.id, duration_min, duration_min
         )
-        cap = f"**Video Streaming**\n\n🎥<b>__Playing:__ </b>[{title[:25]}](https://www.youtube.com/watch?v={videoid}) \n💡<b>__Info:__</b> [Get Additional Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n👤**__Requested by:__** {message.from_user.mention}"
+        cap = f"""
+🏷<b>Name:</b>[{title[:25]}](https://www.youtube.com/watch?v={videoid})
+⏱<b>Duration:</b> `{duration_min}` 
+📖<b>Info:</b> [Get  Information](https://t.me/{BOT_USERNAME}?start=info_{videoid})
+🎧**Requested by:** {message.from_user.mention}
+        """
         final_output = await message.reply_photo(
             photo=thumb,
             reply_markup=InlineKeyboardMarkup(buttons),
