@@ -259,7 +259,7 @@ async def start_markup_check(_, CallbackQuery):
             }
             volume = 25
             try:
-                await Yukki.pytgcalls.change_volume_call(c_id, volume)
+                await KIGO.pytgcalls.change_volume_call(c_id, volume)
                 await CallbackQuery.answer("Setting Audio Changes ...")
             except:
                 return await CallbackQuery.answer("No active Group Call...")
@@ -275,7 +275,7 @@ async def start_markup_check(_, CallbackQuery):
             }
             volume = 50
             try:
-                await Yukki.pytgcalls.change_volume_call(c_id, volume)
+                await KIGO.pytgcalls.change_volume_call(c_id, volume)
                 await CallbackQuery.answer("Setting Audio Changes ...")
             except:
                 return await CallbackQuery.answer("No active Group Call...")
@@ -291,7 +291,7 @@ async def start_markup_check(_, CallbackQuery):
             }
             volume = 100
             try:
-                await Yukki.pytgcalls.change_volume_call(c_id, volume)
+                await KIGO.pytgcalls.change_volume_call(c_id, volume)
                 await CallbackQuery.answer("Setting Audio Changes ...")
             except:
                 return await CallbackQuery.answer("No active Group Call...")
@@ -307,7 +307,7 @@ async def start_markup_check(_, CallbackQuery):
             }
             volume = 200
             try:
-                await Yukki.pytgcalls.change_volume_call(c_id, volume)
+                await KIGO.pytgcalls.change_volume_call(c_id, volume)
                 await CallbackQuery.answer("Setting Audio Changes ...")
             except:
                 return await CallbackQuery.answer("No active Group Call...")
@@ -329,7 +329,7 @@ async def start_markup_check(_, CallbackQuery):
                 "volume": volume,
             }
             try:
-                await Yukki.pytgcalls.change_volume_call(c_id, volume)
+                await KIGO.pytgcalls.change_volume_call(c_id, volume)
                 await CallbackQuery.answer("Setting Audio Changes ...")
             except:
                 return await CallbackQuery.answer("No active Group Call...")
@@ -351,7 +351,7 @@ async def start_markup_check(_, CallbackQuery):
                 "volume": volume,
             }
             try:
-                await Yukki.pytgcalls.change_volume_call(c_id, volume)
+                await KIGO.pytgcalls.change_volume_call(c_id, volume)
                 await CallbackQuery.answer("Setting Audio Changes ...")
             except:
                 return await CallbackQuery.answer("No active Group Call...")
@@ -373,7 +373,7 @@ async def start_markup_check(_, CallbackQuery):
                 "volume": volume,
             }
             try:
-                await Yukki.pytgcalls.change_volume_call(c_id, volume)
+                await KIGO.pytgcalls.change_volume_call(c_id, volume)
                 await CallbackQuery.answer("Setting Audio Changes ...")
             except:
                 return await CallbackQuery.answer("No active Group Call...")
@@ -395,7 +395,7 @@ async def start_markup_check(_, CallbackQuery):
                 "volume": volume,
             }
             try:
-                await Yukki.pytgcalls.change_volume_call(c_id, volume)
+                await KIGO.pytgcalls.change_volume_call(c_id, volume)
                 await CallbackQuery.answer("Setting Audio Changes ...")
             except:
                 return await CallbackQuery.answer("No active Group Call...")
@@ -417,7 +417,7 @@ async def start_markup_check(_, CallbackQuery):
                 "volume": volume,
             }
             try:
-                await Yukki.pytgcalls.change_volume_call(c_id, volume)
+                await KIGO.pytgcalls.change_volume_call(c_id, volume)
                 await CallbackQuery.answer("Setting Audio Changes ...")
             except:
                 return await CallbackQuery.answer("No active Group Call...")
@@ -439,7 +439,7 @@ async def start_markup_check(_, CallbackQuery):
                 "volume": volume,
             }
             try:
-                await Yukki.pytgcalls.change_volume_call(c_id, volume)
+                await KIGO.pytgcalls.change_volume_call(c_id, volume)
                 await CallbackQuery.answer("Setting Audio Changes ...")
             except:
                 return await CallbackQuery.answer("No active Group Call...")
@@ -502,7 +502,7 @@ async def start_markup_check(_, CallbackQuery):
         if command == "DIT":
             diske = psutil.disk_usage("/").percent
             await CallbackQuery.answer(
-                f"SiestaXMusic Disk Usage: {diske}%", show_alert=True
+                f"KIGOMusic Disk Usage: {diske}%", show_alert=True
             )
     except Exception:
         pass
