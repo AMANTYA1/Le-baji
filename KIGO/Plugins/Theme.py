@@ -2,9 +2,9 @@ from typing import Dict, List, Union
 
 from pyrogram import Client, filters
 
-from Yukki import BOT_USERNAME, MUSIC_BOT_NAME, app, db
-from Yukki.Database import _get_theme, get_theme, save_theme
-from Yukki.Decorators.permission import PermissionCheck
+from KIGO import BOT_USERNAME, MUSIC_BOT_NAME, app, db
+from KIGO.Database import _get_theme, get_theme, save_theme
+from KIGO.Decorators.permission import PermissionCheck
 
 themes = [
     "blue",
@@ -38,6 +38,8 @@ __HELP__ = """
 
 /theme
 - Check Theme for your chat.
+
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 
 
