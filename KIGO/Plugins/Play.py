@@ -1,9 +1,9 @@
 import requests
-from Yukki.Utilities.spotify import get_spotify_url, getsp_album_info, getsp_artist_info, getsp_playlist_info, getsp_track_info
-from Yukki.Plugins.custom.func import mplay_stream
-from Yukki.Utilities.resso import get_resso_album, get_resso_artist, get_resso_playlist, get_resso_track, get_resso_url
-from Yukki.Plugins.Resso import resso_buttons, resso_play
-from Yukki.Plugins.Spotify import spotify_buttons, spotify_play
+from KIGO.Utilities.spotify import get_spotify_url, getsp_album_info, getsp_artist_info, getsp_playlist_info, getsp_track_info
+from KIGO.Plugins.custom.func import mplay_stream
+from KIGO.Utilities.resso import get_resso_album, get_resso_artist, get_resso_playlist, get_resso_track, get_resso_url
+from KIGO.Plugins.Resso import resso_buttons, resso_play
+from KIGO.Plugins.Spotify import spotify_buttons, spotify_play
 import asyncio
 from os import path
 
