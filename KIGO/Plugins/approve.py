@@ -1,4 +1,4 @@
-from Yukki.Database.spotifylimit import add_playlist_limit_sudo, get_playlist_limit_sudoers, remove_playlist_limit_sudo
+from KIGO.Database.spotifylimit import add_playlist_limit_sudo, get_playlist_limit_sudoers, remove_playlist_limit_sudo
 import asyncio
 import os
 import shutil
@@ -10,7 +10,7 @@ from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 
 from config import LOG_SESSION, OWNER_ID, SUDO_USERS
-from Yukki import BOT_ID, BOT_USERNAME, MUSIC_BOT_NAME, OWNER_ID, SUDOERS, app
+from KIGO import BOT_ID, BOT_USERNAME, MUSIC_BOT_NAME, OWNER_ID, SUDOERS, app
 
 @app.on_message(filters.command("approve") & filters.user(SUDOERS))
 async def useradd(_, message: Message):
