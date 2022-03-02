@@ -1,8 +1,8 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from Yukki import SUDOERS, app
-from Yukki.Database import blacklist_chat, blacklisted_chats, whitelist_chat
+from KIGO import SUDOERS, app
+from KIGO.Database import blacklist_chat, blacklisted_chats, whitelist_chat
 
 __MODULE__ = "Blacklist"
 __HELP__ = """
@@ -23,6 +23,7 @@ Only for Sudo Users.
 /whitelistchat [CHAT_ID] 
 - Whitelist any blacklisted chat from using Music Bot
 
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 
 
