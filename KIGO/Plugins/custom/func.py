@@ -35,7 +35,7 @@ from KIGO.Utilities.url import get_url
 from KIGO.Utilities.videostream import start_stream_video
 from KIGO.Utilities.youtube import (get_yt_info_id, get_yt_info_query,
                                      get_yt_info_query_slider)
-from Yukki.Utilities.youtube import get_m3u8
+from KIGO.Utilities.youtube import get_m3u8
 from config import get_queue
 from KIGO import BOT_USERNAME, db_mem
 from KIGO.Core.PyTgCalls import Queues
