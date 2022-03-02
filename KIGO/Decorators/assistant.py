@@ -6,9 +6,9 @@ from pyrogram.errors import UserAlreadyParticipant, UserNotParticipant
 from pyrogram.types import (CallbackQuery, InlineKeyboardButton,
                             InlineKeyboardMarkup, InputMediaPhoto, Message)
 
-from Yukki import BOT_ID, MUSIC_BOT_NAME, app, random_assistant
-from Yukki.Database import get_assistant, save_assistant
-from Yukki.Utilities.assistant import get_assistant_details
+from KIGO import BOT_ID, MUSIC_BOT_NAME, app, random_assistant
+from KIGO.Database import get_assistant, save_assistant
+from KIGO.Utilities.assistant import get_assistant_details
 
 
 @app.on_callback_query(filters.regex("unban_assistant"))
