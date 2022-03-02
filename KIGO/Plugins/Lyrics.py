@@ -6,7 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from youtubesearchpython import VideosSearch
 
-from Yukki import BOT_USERNAME, MUSIC_BOT_NAME, app
+from KIGO import BOT_USERNAME, MUSIC_BOT_NAME, app
 
 __MODULE__ = "Lyrics"
 __HELP__ = """
@@ -17,6 +17,7 @@ __HELP__ = """
 **Note**:
 Inline button of Lyrics has some bugs. Searches only 50% results. You can use command instead if you want lyrics for any playing music.
 
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 
 
