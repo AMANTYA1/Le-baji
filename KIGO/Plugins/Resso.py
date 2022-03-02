@@ -1,5 +1,5 @@
-from Yukki.Utilities.resso import get_resso_album, get_resso_artist, get_resso_playlist, get_resso_track, get_resso_url
-from Yukki.Database.queue import is_active_chat
+from KIGO.Utilities.resso import get_resso_album, get_resso_artist, get_resso_playlist, get_resso_track, get_resso_url
+from KIGO.Database.queue import is_active_chat
 import asyncio
 from os import path
 
@@ -9,57 +9,57 @@ from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
 from youtube_search import YoutubeSearch
 import os
 
-import Yukki
-from Yukki import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
+import KIGO
+from KIGO import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
                    MUSIC_BOT_NAME, app, db_mem)
-from Yukki.Core.PyTgCalls.Converter import convert
-from Yukki.Core.PyTgCalls.Downloader import download
-from Yukki.Core.PyTgCalls.Tgdownloader import telegram_download
-from Yukki.Database import (get_active_video_chats, get_video_limit,
+from KIGO.Core.PyTgCalls.Converter import convert
+from KIGO.Core.PyTgCalls.Downloader import download
+from KIGO.Core.PyTgCalls.Tgdownloader import telegram_download
+from KIGO.Database import (get_active_video_chats, get_video_limit,
                             is_active_video_chat)
-from Yukki.Decorators.assistant import AssistantAdd
-from Yukki.Decorators.checker import checker
-from Yukki.Decorators.logger import logging
-from Yukki.Decorators.permission import PermissionCheck
-from Yukki.Inline import (livestream_markup, playlist_markup, search_markup,
+from KIGO.Decorators.assistant import AssistantAdd
+from KIGO.Decorators.checker import checker
+from KIGO.Decorators.logger import logging
+from KIGO.Decorators.permission import PermissionCheck
+from KIGO.Inline import (livestream_markup, playlist_markup, search_markup,
                           search_markup2, url_markup, url_markup2)
-from Yukki.Utilities.changers import seconds_to_min, time_to_seconds
-from Yukki.Utilities.chat import specialfont_to_normal
-from Yukki.Utilities.stream import start_stream, start_stream_audio
-from Yukki.Utilities.theme import check_theme
-from Yukki.Utilities.thumbnails import gen_thumb
-from Yukki.Utilities.url import get_url
-from Yukki.Utilities.videostream import start_stream_video
-from Yukki.Utilities.youtube import (get_yt_info_id, get_yt_info_query,
+from KIGO.Utilities.changers import seconds_to_min, time_to_seconds
+from KIGO.Utilities.chat import specialfont_to_normal
+from KIGO.Utilities.stream import start_stream, start_stream_audio
+from KIGO.Utilities.theme import check_theme
+from KIGO.Utilities.thumbnails import gen_thumb
+from KIGO.Utilities.url import get_url
+from KIGO.Utilities.videostream import start_stream_video
+from KIGO.Utilities.youtube import (get_yt_info_id, get_yt_info_query,
                                      get_yt_info_query_slider)
 
-from Yukki.Plugins.custom.func import mplay_stream, vplay_stream
+from KIGO.Plugins.custom.func import mplay_stream, vplay_stream
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from Yukki import BOT_USERNAME, MUSIC_BOT_NAME, app, db_mem
-from Yukki.Core.PyTgCalls import Queues
-from Yukki.Core.PyTgCalls.Converter import convert
-from Yukki.Core.PyTgCalls.Downloader import download
-from Yukki.Core.PyTgCalls.Yukki import (join_stream, pause_stream,
+from KIGO import BOT_USERNAME, MUSIC_BOT_NAME, app, db_mem
+from KIGO.Core.PyTgCalls import Queues
+from KIGO.Core.PyTgCalls.Converter import convert
+from KIGO.Core.PyTgCalls.Downloader import download
+from KIGO.Core.PyTgCalls.Yukki import (join_stream, pause_stream,
                                         resume_stream, skip_stream,
                                         skip_video_stream, stop_stream)
-from Yukki.Database import (_get_playlists, delete_playlist, get_playlist,
+from KIGO.Database import (_get_playlists, delete_playlist, get_playlist,
                             get_playlist_names, is_active_chat,
                             remove_active_video_chat, save_playlist)
-from Yukki.Database.queue import (add_active_chat, is_active_chat,
+from KIGO.Database.queue import (add_active_chat, is_active_chat,
                                   is_music_playing, music_off, music_on,
                                   remove_active_chat)
-from Yukki.Decorators.admins import AdminRightsCheckCB
-from Yukki.Decorators.checker import checkerCB
-from Yukki.Inline import (audio_markup, audio_markup2, download_markup,
+from KIGO.Decorators.admins import AdminRightsCheckCB
+from KIGO.Decorators.checker import checkerCB
+from KIGO.Inline import (audio_markup, audio_markup2, download_markup,
                           fetch_playlist, paste_queue_markup, primary_markup,
                           secondary_markup2)
-from Yukki.Utilities.changers import time_to_seconds
-from Yukki.Utilities.chat import specialfont_to_normal
-from Yukki.Utilities.paste import isPreviewUp, paste_queue
-from Yukki.Utilities.theme import check_theme
-from Yukki.Utilities.thumbnails import gen_thumb
-from Yukki.Utilities.timer import start_timer
-from Yukki.Utilities.youtube import get_m3u8, get_yt_info_id
+from KIGO.Utilities.changers import time_to_seconds
+from KIGO.Utilities.chat import specialfont_to_normal
+from KIGO.Utilities.paste import isPreviewUp, paste_queue
+from KIGO.Utilities.theme import check_theme
+from KIGO.Utilities.thumbnails import gen_thumb
+from KIGO.Utilities.timer import start_timer
+from KIGO.Utilities.youtube import get_m3u8, get_yt_info_id
 from config import get_queue
 
 def resso_buttons(id,type):
@@ -127,7 +127,7 @@ async def resso_play(_, message: Message):
                     return await message.reply_photo(
                         photo="Utils/resso.jpg",
                         caption=(
-                            "**Usage:**\n /resso [Resso Track Or Playlist Or Album Or Artist Link]\n\n➤ **Playing limit is 20 songs for playlists** [[What is this ?](https://t.me/TechZBots/71)]"
+                            "**Usage:**\n /resso [Resso Track Or Playlist Or Album Or Artist Link]\n\n➤ **Playing limit is 20 songs for playlists** [[What is this ?](https://t.me/OmFoXD)]"
                         ),
                         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🔄 Close", callback_data="close_btn"),]]))             
                 await mystic.delete()
@@ -143,7 +143,7 @@ async def resso_play(_, message: Message):
                     return await message.reply_photo(
                         photo="Utils/resso.jpg",
                         caption=(
-                            "**Usage:**\n /resso [Resso Track Or Playlist Or Album Or Artist Link]\n\n➤ **Playing limit is 20 songs for playlists** [[What is this ?](https://t.me/TechZBots/71)]"
+                            "**Usage:**\n /resso [Resso Track Or Playlist Or Album Or Artist Link]\n\n➤ **Playing limit is 20 songs for playlists** [[What is this ?](https://t.me/OmFoXD)]"
                         ),
                         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🔄 Close", callback_data="close_btn"),]]))             
                 await mystic.delete()
@@ -159,7 +159,7 @@ async def resso_play(_, message: Message):
                     return await message.reply_photo(
                         photo="Utils/resso.jpg",
                         caption=(
-                            "**Usage:**\n /resso [Resso Track Or Playlist Or Album Or Artist Link]\n\n➤ **Playing limit is 20 songs for playlists** [[What is this ?](https://t.me/TechZBots/71)]"
+                            "**Usage:**\n /resso [Resso Track Or Playlist Or Album Or Artist Link]\n\n➤ **Playing limit is 20 songs for playlists** [[What is this ?](https://t.me/OmFoXD)]"
                         ),
                         reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🔄 Close", callback_data="close_btn"),]]))             
                 await mystic.delete()
@@ -172,7 +172,7 @@ async def resso_play(_, message: Message):
                 return await message.reply_photo(
                     photo="Utils/resso.jpg",
                     caption=(
-                        "**Usage:**\n /resso [Resso Track Or Playlist Or Album Or Artist Link]\n\n➤ **Playing limit is 20 songs for playlists** [[What is this ?](https://t.me/TechZBots/71)]"
+                        "**Usage:**\n /resso [Resso Track Or Playlist Or Album Or Artist Link]\n\n➤ **Playing limit is 20 songs for playlists** [[What is this ?](https://t.me/OmFoXD)]"
                     ),
                     reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🔄 Close", callback_data="close_btn"),]]))             
 
@@ -237,7 +237,7 @@ async def play_resso_playlist(_, CallbackQuery):
                 return await CallbackQuery.message.reply_photo(
                     photo="Utils/resso.jpg",
                     caption=(
-                        "**Usage:**\n /resso [Resso Track Or Playlist Or Album Or Artist Link]\n\n➤ **Playing limit is 20 songs for playlists** [[What is this ?](https://t.me/TechZBots/71)]"
+                        "**Usage:**\n /resso [Resso Track Or Playlist Or Album Or Artist Link]\n\n➤ **Playing limit is 20 songs for playlists** [[What is this ?](https://t.me/OmFoXD)]"
                     ),
                     reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🔄 Close", callback_data="close_btn"),]]))             
             tracks_list = resso_info[2]
