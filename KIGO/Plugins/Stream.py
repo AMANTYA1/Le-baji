@@ -48,7 +48,7 @@ __HELP__ = f"""
 """
 
 
-@app.on_callback_query(filters.regex(pattern=r"Yukki"))
+@app.on_callback_query(filters.regex(pattern=r"KIGO"))
 async def choose_playmode(_, CallbackQuery):
     await CallbackQuery.answer()
     callback_data = CallbackQuery.data.strip()
