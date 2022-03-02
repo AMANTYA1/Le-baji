@@ -1,7 +1,7 @@
 from pyrogram.types import (CallbackQuery, InlineKeyboardButton,
                             InlineKeyboardMarkup, InputMediaPhoto, Message)
 
-from Yukki import db_mem
+from KIGO import db_mem
 
 
 def others_markup(videoid, user_id):
