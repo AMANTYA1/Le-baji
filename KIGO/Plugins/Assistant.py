@@ -7,9 +7,9 @@ from pyrogram.types import (CallbackQuery, InlineKeyboardButton,
                             InlineQueryResultPhoto, InputTextMessageContent,
                             Message)
 
-from Yukki import ASSISTANT_PREFIX, SUDOERS, app, random_assistant
-from Yukki.Database import get_assistant, save_assistant
-from Yukki.Utilities.assistant import get_assistant_details
+from KIGO import ASSISTANT_PREFIX, SUDOERS, app, random_assistant
+from KIGO.Database import get_assistant, save_assistant
+from KIGO.Utilities.assistant import get_assistant_details
 
 __MODULE__ = "Assistant"
 __HELP__ = f"""
@@ -45,6 +45,8 @@ __HELP__ = f"""
 
 /setassistant [ASS NUMBER or Random]
 - Set a assistant account for chat. 
+
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 
 
@@ -94,7 +96,7 @@ async def assis_change(_, message: Message):
     _assistant = await get_assistant(message.chat.id, "assistant")
     if not _assistant:
         await message.reply_text(
-            f"**__SiestaXMusic Bot Assistant Alloted__**\n\nAssistant No. **{ran_ass}**"
+            f"**__KIGOMusic Bot Assistant Alloted__**\n\nAssistant No. **{ran_ass}**"
         )
         assis = {
             "saveassistant": ran_ass,
