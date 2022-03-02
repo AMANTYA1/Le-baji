@@ -69,7 +69,7 @@ async def useradd(_, message: Message):
             await message.reply_text(
                 f"Added **{user.mention}** to Sudo Users."
             )
-            os.system(f"kill -9 {os.getpid()} && python3 -m Yukki")
+            os.system(f"kill -9 {os.getpid()} && python3 -m KIGO")
         else:
             await message.reply_text("Failed")
         return
@@ -82,7 +82,7 @@ async def useradd(_, message: Message):
         await message.reply_text(
             f"Added **{message.reply_to_message.from_user.mention}** to Sudo Users"
         )
-        os.system(f"kill -9 {os.getpid()} && python3 -m Yukki")
+        os.system(f"kill -9 {os.getpid()} && python3 -m KIGO")
     else:
         await message.reply_text("Failed")
     return
@@ -108,7 +108,7 @@ async def userdel(_, message: Message):
             await message.reply_text(
                 f"Removed **{user.mention}** from {MUSIC_BOT_NAME}'s Sudo."
             )
-            return os.system(f"kill -9 {os.getpid()} && python3 -m Yukki")
+            return os.system(f"kill -9 {os.getpid()} && python3 -m KIGO")
         await message.reply_text(f"Something wrong happened.")
         return
     from_user_id = message.from_user.id
@@ -123,7 +123,7 @@ async def userdel(_, message: Message):
         await message.reply_text(
             f"Removed **{mention}** from {MUSIC_BOT_NAME}'s Sudo."
         )
-        return os.system(f"kill -9 {os.getpid()} && python3 -m Yukki")
+        return os.system(f"kill -9 {os.getpid()} && python3 -m KIGO")
     await message.reply_text(f"Something wrong happened.")
 
 
