@@ -17,10 +17,10 @@ from pyrogram.types import Message
 
 from config import (HEROKU_API_KEY, HEROKU_APP_NAME, UPSTREAM_BRANCH,
                     UPSTREAM_REPO)
-from Yukki import LOG_GROUP_ID, MUSIC_BOT_NAME, SUDOERS, app
-from Yukki.Database import get_active_chats, remove_active_chat, remove_active_video_chat
-from Yukki.Utilities.heroku import is_heroku, user_input
-from Yukki.Utilities.paste import isPreviewUp, paste_queue
+from KIGO import LOG_GROUP_ID, MUSIC_BOT_NAME, SUDOERS, app
+from KIGO.Database import get_active_chats, remove_active_chat, remove_active_video_chat
+from KIGO.Utilities.heroku import is_heroku, user_input
+from KIGO.Utilities.paste import isPreviewUp, paste_queue
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
@@ -51,6 +51,8 @@ __HELP__ = f"""
 
 /restart 
 - Restart Bot [All downloads, cache, raw files will be cleared too]. 
+
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 
 
