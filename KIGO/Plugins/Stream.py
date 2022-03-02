@@ -8,25 +8,25 @@ from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto,
 from youtube_search import YoutubeSearch
 from youtubesearchpython import VideosSearch
 
-from Yukki import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
+from KIGO import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
                    MUSIC_BOT_NAME, app, db_mem)
-from Yukki.Core.PyTgCalls.Converter import convert
-from Yukki.Core.PyTgCalls.Downloader import download
-from Yukki.Database import (get_active_video_chats, get_video_limit,
+from KIGO.Core.PyTgCalls.Converter import convert
+from KIGO.Core.PyTgCalls.Downloader import download
+from KIGO.Database import (get_active_video_chats, get_video_limit,
                             is_active_video_chat, is_on_off)
-from Yukki.Decorators.assistant import AssistantAdd
-from Yukki.Decorators.checker import checker
-from Yukki.Decorators.permission import PermissionCheck
-from Yukki.Inline import (choose_markup, livestream_markup, playlist_markup,
+from KIGO.Decorators.assistant import AssistantAdd
+from KIGO.Decorators.checker import checker
+from KIGO.Decorators.permission import PermissionCheck
+from KIGO.Inline import (choose_markup, livestream_markup, playlist_markup,
                           search_markup, search_markup2, stream_quality_markup,
                           url_markup, url_markup2)
-from Yukki.Utilities.changers import seconds_to_min, time_to_seconds
-from Yukki.Utilities.chat import specialfont_to_normal
-from Yukki.Utilities.theme import check_theme
-from Yukki.Utilities.thumbnails import gen_thumb
-from Yukki.Utilities.url import get_url
-from Yukki.Utilities.videostream import start_live_stream, start_video_stream
-from Yukki.Utilities.youtube import (get_m3u8, get_yt_info_id,
+from KIGO.Utilities.changers import seconds_to_min, time_to_seconds
+from KIGO.Utilities.chat import specialfont_to_normal
+from KIGO.Utilities.theme import check_theme
+from KIGO.Utilities.thumbnails import gen_thumb
+from KIGO.Utilities.url import get_url
+from KIGO.Utilities.videostream import start_live_stream, start_video_stream
+from KIGO.Utilities.youtube import (get_m3u8, get_yt_info_id,
                                      get_yt_info_query,
                                      get_yt_info_query_slider)
 
@@ -43,6 +43,7 @@ __HELP__ = f"""
 /set_video_limit [Number of Chats]
 - Set a maximum Number of Chats allowed for Video Calls at a time.
 
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 
 """
 
