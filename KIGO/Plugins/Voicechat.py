@@ -9,12 +9,12 @@ from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
                             Voice)
 
 from config import get_queue
-from Yukki import BOT_USERNAME, SUDOERS, app, db_mem, random_assistant
-from Yukki.Database import (get_active_chats, get_active_video_chats,
+from KIGO import BOT_USERNAME, SUDOERS, app, db_mem, random_assistant
+from KIGO.Database import (get_active_chats, get_active_video_chats,
                             get_assistant, is_active_chat, save_assistant)
-from Yukki.Decorators.checker import checker, checkerCB
-from Yukki.Inline import primary_markup,choose_markup
-from Yukki.Utilities.assistant import get_assistant_details
+from KIGO.Decorators.checker import checker, checkerCB
+from KIGO.Inline import primary_markup,choose_markup
+from KIGO.Utilities.assistant import get_assistant_details
 
 loop = asyncio.get_event_loop()
 
@@ -35,6 +35,8 @@ Only for Sudo Users
 
 /leavebot [Chat Username or Chat ID]
 - Bot will leave the particular chat.
+
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 
 @app.on_callback_query(filters.regex("gback_list_chose_stream"))
