@@ -2,13 +2,12 @@
 aiohttp
 aiofiles
 asyncio
-numpy
 ffmpeg-python
 pillow
 pyrogram
 hachoir
 lyricsgenius
-py-tgcalls==0.8.1
+py-tgcalls==0.8.5
 wget
 python-dotenv
 youtube-search-python
@@ -26,3 +25,5 @@ heroku3
 spotipy
 bs4
 html5lib
+numpy
+pytube
