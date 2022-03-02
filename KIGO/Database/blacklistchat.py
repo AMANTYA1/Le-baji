@@ -1,6 +1,6 @@
 from typing import Dict, List, Union
 
-from Yukki import db
+from KIGO import db
 
 blacklist_chatdb = db.blacklistChat
 
