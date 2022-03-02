@@ -6,31 +6,31 @@ from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
                             Voice)
 from youtube_search import YoutubeSearch
 
-import Yukki
-from Yukki import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
+import KIGO
+from KIGO import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
                    MUSIC_BOT_NAME, app, db_mem)
-from Yukki.Core.PyTgCalls.Converter import convert
-from Yukki.Core.PyTgCalls.Downloader import download
-from Yukki.Core.PyTgCalls.Tgdownloader import telegram_download
-from Yukki.Database import (get_active_video_chats, get_video_limit,
+from KIGO.Core.PyTgCalls.Converter import convert
+from KIGO.Core.PyTgCalls.Downloader import download
+from KIGO.Core.PyTgCalls.Tgdownloader import telegram_download
+from KIGO.Database import (get_active_video_chats, get_video_limit,
                             is_active_video_chat)
-from Yukki.Decorators.assistant import AssistantAdd
-from Yukki.Decorators.checker import checker
-from Yukki.Decorators.logger import logging
-from Yukki.Decorators.permission import PermissionCheck
-from Yukki.Inline import (livestream_markup, playlist_markup, search_markup,
+from KIGO.Decorators.assistant import AssistantAdd
+from KIGO.Decorators.checker import checker
+from KIGO.Decorators.logger import logging
+from KIGO.Decorators.permission import PermissionCheck
+from KIGO.Inline import (livestream_markup, playlist_markup, search_markup,
                           search_markup2, url_markup, url_markup2)
-from Yukki.Utilities.changers import seconds_to_min, time_to_seconds
-from Yukki.Utilities.chat import specialfont_to_normal
-from Yukki.Utilities.stream import start_stream, start_stream_audio
-from Yukki.Utilities.theme import check_theme
-from Yukki.Utilities.thumbnails import gen_thumb
-from Yukki.Utilities.url import get_url
-from Yukki.Utilities.videostream import start_stream_video
-from Yukki.Utilities.youtube import (get_yt_info_id, get_yt_info_query,
+from KIGO.Utilities.changers import seconds_to_min, time_to_seconds
+from KIGO.Utilities.chat import specialfont_to_normal
+from KIGO.Utilities.stream import start_stream, start_stream_audio
+from KIGO.Utilities.theme import check_theme
+from KIGO.Utilities.thumbnails import gen_thumb
+from KIGO.Utilities.url import get_url
+from KIGO.Utilities.videostream import start_stream_video
+from KIGO.Utilities.youtube import (get_yt_info_id, get_yt_info_query,
                                      get_yt_info_query_slider)
 
-from Yukki.Plugins.custom.func import mplay_stream, vplay_stream
+from KIGO.Plugins.custom.func import mplay_stream, vplay_stream
 
 @app.on_message(
     filters.command(["play", f"play@{BOT_USERNAME}"]) & filters.group
@@ -60,7 +60,7 @@ async def mplayaa(_, message: Message):
     url = get_url(message)
     if audio:
         mystic = await message.reply_text(
-            "🔄 Processing Audio... Please Wait!"
+            "🔥🙄 Processing Audio...!"
         )
         try:
             read = db_mem[message.chat.id]["live_check"]
@@ -109,7 +109,7 @@ async def mplayaa(_, message: Message):
     elif video:
         return await message.reply_text("Use /play or /vplay commands to play video files in voice chat.")
     elif url:
-        mystic = await message.reply_text("🔄 Processing URL... Please Wait!")
+        mystic = await message.reply_text("🙄🔥 Processing URL...!")
         if not message.reply_to_message:
             query = message.text.split(None, 1)[1]
         else:
@@ -130,14 +130,14 @@ async def mplayaa(_, message: Message):
                 message.from_user.first_name, message.from_user.id, "abcd"
             )
             await message.reply_photo(
-                photo="Utils/Playlist.jpg",
+                photo="Utils/omfo.jpg",
                 caption=(
                     "**Usage:** /play [Music Name or Youtube Link or Reply to Audio]\n\nIf you want to play Playlists! Select the one from Below."
                 ),
                 reply_markup=InlineKeyboardMarkup(buttons),
             )
             return
-        mystic = await message.reply_text("🔍 **Searching**...")
+        mystic = await message.reply_text("🔍 **omfo**...")
         query = message.text.split(None, 1)[1]
         (
             title,
@@ -194,7 +194,7 @@ async def vplayaaa(_, message: Message):
                     "Sorry! Bot only allows limited number of video calls due to CPU overload issues. Many other chats are using video call right now. Try switching to audio or try again later"
                 )
         mystic = await message.reply_text(
-            "🔄 Processing Video... Please Wait!"
+            "🙄🔥 Processing Video...!"
         )
         try:
             read = db_mem[message.chat.id]["live_check"]
@@ -214,7 +214,7 @@ async def vplayaaa(_, message: Message):
             mystic,
         )
     elif url:
-        mystic = await message.reply_text("🔄 Processing URL... Please Wait!")
+        mystic = await message.reply_text("🙄🔥 Processing URL...")
         if not message.reply_to_message:
             query = message.text.split(None, 1)[1]
         else:
@@ -235,14 +235,14 @@ async def vplayaaa(_, message: Message):
                 message.from_user.first_name, message.from_user.id, "abcd"
             )
             await message.reply_photo(
-                photo="Utils/Playlist.jpg",
+                photo="Utils/omfo.jpg",
                 caption=(
                     "**Usage:** /play [Music Name or Youtube Link or Reply to Audio]\n\nIf you want to play Playlists! Select the one from Below."
                 ),
                 reply_markup=InlineKeyboardMarkup(buttons),
             )
             return
-        mystic = await message.reply_text("🔄 Processing... Please Wait!")
+        mystic = await message.reply_text("🙄🔥 Processing...!")
         query = message.text.split(None, 1)[1]
         (
             title,
