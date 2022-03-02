@@ -1,4 +1,4 @@
-from Yukki.Plugins.custom.start import start_menu_group
+from KIGO.Plugins.custom.start import start_menu_group
 import asyncio
 import random
 import time
@@ -10,11 +10,11 @@ from pyrogram import filters
 from pyrogram.types import (CallbackQuery, InlineKeyboardButton,
                             InlineKeyboardMarkup, InputMediaPhoto, Message)
 
-from Yukki import ASSIDS, BOT_ID, BOT_USERNAME, MUSIC_BOT_NAME, OWNER_ID, SUDOERS, app
-from Yukki import boottime as bot_start_time
-from Yukki import db, random_assistant
-from Yukki.Core.PyTgCalls import Yukki
-from Yukki.Database import (add_nonadmin_chat, add_served_chat,
+from KIGO import ASSIDS, BOT_ID, BOT_USERNAME, MUSIC_BOT_NAME, OWNER_ID, SUDOERS, app
+from KIGO import boottime as bot_start_time
+from KIGO import db, random_assistant
+from KIGO.Core.PyTgCalls import KIGO
+from KIGO.Database import (add_nonadmin_chat, add_served_chat,
                             blacklisted_chats, get_assistant, get_authuser,
                             get_authuser_names, get_start, is_nonadmin_chat,
                             is_served_chat, remove_active_chat,
@@ -42,6 +42,8 @@ __HELP__ = """
 
 /settings 
 - Get Settings button.
+
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 
 
