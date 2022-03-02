@@ -1,6 +1,6 @@
 import random
 
-from Yukki.Database import get_theme
+from KIGO.Database import get_theme
 
 themes = [
     "blue",
