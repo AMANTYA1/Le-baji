@@ -1,5 +1,5 @@
 from typing import Dict, List, Union
-from Yukki import SUDOERS, db
+from KIGO import SUDOERS, db
 
 spotifydb = db.spotify
 
