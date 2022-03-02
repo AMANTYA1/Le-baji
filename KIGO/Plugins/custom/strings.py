@@ -1,5 +1,5 @@
 from config import ASSISTANT_PREFIX
-from Yukki import BOT_NAME, BOT_USERNAME
+from KIGO import BOT_NAME, BOT_USERNAME
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 START_TEXT = f"""
@@ -28,10 +28,10 @@ START_BUTTON_GROUP = InlineKeyboardMarkup(
         ],
         [
             InlineKeyboardButton(
-                text="📣 Updates Channel", url="https://t.me/BotDuniya"
+                text="📣 Updates Channel", url="https://t.me/kigo_omfo"
             ),
             InlineKeyboardButton(
-                text="💬 Support Group", url="https://t.me/PmPermit"
+                text="💬 Support Group", url="https://t.me/OmFoXD"
             ),                       
         ],        
     ]
@@ -50,10 +50,10 @@ START_BUTTON_PRIVATE = InlineKeyboardMarkup(
         ],
         [
             InlineKeyboardButton(
-                text="📣 Updates Channel", url="https://t.me/BotDuniya"
+                text="📣 Updates Channel", url="https://t.me/kigo_omfo"
             ),
             InlineKeyboardButton(
-                text="💬 Support Group", url="https://t.me/PmPermit"
+                text="💬 Support Group", url="https://t.me/OmFoXD"
             ),                       
         ],        
     ]
@@ -183,6 +183,8 @@ Here is the help for **Admin Commands:**
 
 /authusers 
 - Check AUTH LIST of the group.
+
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 
 BOT_TEXT = """
@@ -199,7 +201,9 @@ Here is the help for **Bot Commands:**
 - Get Settings dashboard of a group. You can manage Auth Users Mode. Commands Mode from here.
 
 /ping
-- Ping the Bot and check Ram, Cpu etc stats of Music Bot."""
+- Ping the Bot and check Ram, Cpu etc stats of Music Bot.
+
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**"""
 
 PLAY_TEXT = """
 Here is the help for **Play Commands:**
@@ -227,6 +231,8 @@ Here is the help for **Play Commands:**
 
 /delgroupplaylist
 - Delete any saved music in your group's playlist [Requires Admin Rights.]
+
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 
 SUDO_TEXT = f"""
@@ -270,6 +276,8 @@ Here is the help for **Extra Commands:**
 
 /queue
 - Check Queue List of Music.
+
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 
 BASIC_TEXT = """
@@ -288,6 +296,8 @@ BASIC_TEXT = """
 /settings - settings of the group
 /theme - set theme for your group
 /queue - get queued song
+
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 
 BASIC_BACK_BUTTON = InlineKeyboardMarkup(
