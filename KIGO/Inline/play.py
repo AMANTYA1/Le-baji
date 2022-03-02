@@ -191,6 +191,7 @@ def secondary_markup2(videoid, user_id):
         ],
         [
             InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close"),
+            InlineKeyboardButton(text="Inline", switch_inline_query_current_chat="),
         ],
     ]
     return buttons
@@ -218,6 +219,7 @@ def primary_markup(videoid, user_id, current_time, total_time):
                 text="🔗 More Menu", callback_data=f"other {videoid}|{user_id}"
             ),
             InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close"),
+            InlineKeyboardButton(text="Additional", switch_inline_query_current_chat="),
         ],
     ]
     return buttons
@@ -242,6 +244,7 @@ def timer_markup(videoid, user_id, current_time, total_time):
                 text="🔗 More Menu", callback_data=f"other {videoid}|{user_id}"
             ),
             InlineKeyboardButton(text="🗑 Close Menu", callback_data=f"close"),
+            InlineKeyboardButton(text="Additional", switch_inline_query_current_chat="),
         ],
     ]
     return buttons
