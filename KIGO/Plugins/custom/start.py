@@ -1,7 +1,7 @@
 from config import THUMBNAIL
-from Yukki import SUDOERS, app
+from KIGO import SUDOERS, app
 from pyrogram import filters
-from Yukki.Plugins.custom.strings import *
+from KIGO.Plugins.custom.strings import *
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 async def start_menu_private(message):
