@@ -6,12 +6,12 @@ from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
                             Voice)
 from youtube_search import YoutubeSearch
 
-from Yukki import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
+from KIGO import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
                    MUSIC_BOT_NAME, app, db_mem)
-from Yukki.Decorators.permission import PermissionCheck
-from Yukki.Inline import song_download_markup, song_markup
-from Yukki.Utilities.url import get_url
-from Yukki.Utilities.youtube import get_yt_info_query, get_yt_info_query_slider
+from KIGO.Decorators.permission import PermissionCheck
+from KIGO.Inline import song_download_markup, song_markup
+from KIGO.Utilities.url import get_url
+from KIGO.Utilities.youtube import get_yt_info_query, get_yt_info_query_slider
 
 loop = asyncio.get_event_loop()
 
@@ -22,7 +22,7 @@ __HELP__ = """
 /song [Youtube URL or Search Query] 
 - Download the particular query in audio or video format.
 
-
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 
 """
 
