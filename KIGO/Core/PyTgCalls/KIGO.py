@@ -21,7 +21,7 @@ from config import STRING1, STRING2, STRING3, STRING4, STRING5, get_queue
 from KIGO import (ASS_CLI_1, ASS_CLI_2, ASS_CLI_3, ASS_CLI_4, ASS_CLI_5,
                    MUSIC_BOT_NAME, app, db_mem)
 from KIGO.Core.PyTgCalls import Queues
-from KIGOW.Core.PyTgCalls.Converter import convert
+from KIGO.Core.PyTgCalls.Converter import convert
 from KIGO.Core.PyTgCalls.Downloader import download
 from KIGO.Database import (get_assistant, remove_active_chat,
                             remove_active_video_chat)
