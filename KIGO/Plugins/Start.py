@@ -19,12 +19,12 @@ from KIGO.Database import (add_nonadmin_chat, add_served_chat,
                             get_authuser_names, get_start, is_nonadmin_chat,
                             is_served_chat, remove_active_chat,
                             remove_nonadmin_chat, save_assistant, save_start)
-from Yukki.Decorators.admins import ActualAdminCB
-from Yukki.Decorators.permission import PermissionCheck
-from Yukki.Inline import (custommarkup, dashmarkup, setting_markup,
+from KIGO.Decorators.admins import ActualAdminCB
+from KIGO.Decorators.permission import PermissionCheck
+from KIGO.Inline import (custommarkup, dashmarkup, setting_markup,
                           setting_markup2, start_pannel, usermarkup, volmarkup)
-from Yukki.Utilities.assistant import get_assistant_details
-from Yukki.Utilities.ping import get_readable_time
+from KIGO.Utilities.assistant import get_assistant_details
+from KIGO.Utilities.ping import get_readable_time
 
 welcome_group = 2
 
