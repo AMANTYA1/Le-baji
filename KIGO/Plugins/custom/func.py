@@ -12,47 +12,47 @@ from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto, Message,
                             Voice)
 from youtube_search import YoutubeSearch
 
-import Yukki
-from Yukki import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
+import KIGO
+from KIGO import (BOT_USERNAME, DURATION_LIMIT, DURATION_LIMIT_MIN,
                    MUSIC_BOT_NAME, app, db_mem)
-from Yukki.Core.PyTgCalls.Converter import convert
-from Yukki.Core.PyTgCalls.Downloader import download
-from Yukki.Core.PyTgCalls.Tgdownloader import telegram_download
-from Yukki.Database import (get_active_video_chats, get_video_limit,
+from KIGO.Core.PyTgCalls.Converter import convert
+from KIGO.Core.PyTgCalls.Downloader import download
+from KIGO.Core.PyTgCalls.Tgdownloader import telegram_download
+from KIGO.Database import (get_active_video_chats, get_video_limit,
                             is_active_video_chat)
-from Yukki.Decorators.assistant import AssistantAdd
-from Yukki.Decorators.checker import checker
-from Yukki.Decorators.logger import logging
-from Yukki.Decorators.permission import PermissionCheck
-from Yukki.Inline import (livestream_markup, playlist_markup, search_markup,
+from KIGO.Decorators.assistant import AssistantAdd
+from KIGO.Decorators.checker import checker
+from KIGO.Decorators.logger import logging
+from KIGO.Decorators.permission import PermissionCheck
+from KIGO.Inline import (livestream_markup, playlist_markup, search_markup,
                           search_markup2, url_markup, url_markup2)
-from Yukki.Utilities.changers import seconds_to_min, time_to_seconds
-from Yukki.Utilities.chat import specialfont_to_normal
-from Yukki.Utilities.stream import start_stream, start_stream_audio
-from Yukki.Utilities.theme import check_theme
-from Yukki.Utilities.thumbnails import gen_thumb
-from Yukki.Utilities.url import get_url
-from Yukki.Utilities.videostream import start_stream_video
-from Yukki.Utilities.youtube import (get_yt_info_id, get_yt_info_query,
+from KIGO.Utilities.changers import seconds_to_min, time_to_seconds
+from KIGO.Utilities.chat import specialfont_to_normal
+from KIGO.Utilities.stream import start_stream, start_stream_audio
+from KIGO.Utilities.theme import check_theme
+from KIGO.Utilities.thumbnails import gen_thumb
+from KIGO.Utilities.url import get_url
+from KIGO.Utilities.videostream import start_stream_video
+from KIGO.Utilities.youtube import (get_yt_info_id, get_yt_info_query,
                                      get_yt_info_query_slider)
-from Yukki.Utilities.youtube import get_m3u8
+from KIGO.Utilities.youtube import get_m3u8
 from config import get_queue
-from Yukki import BOT_USERNAME, db_mem
-from Yukki.Core.PyTgCalls import Queues
-from Yukki.Core.PyTgCalls.Yukki import (join_live_stream, join_video_stream,
+from KIGO import BOT_USERNAME, db_mem
+from KIGO.Core.PyTgCalls import Queues
+from KIGO.Core.PyTgCalls.Yukki import (join_live_stream, join_video_stream,
                                         stop_stream)
-from Yukki.Database import (add_active_chat, add_active_video_chat,
+from KIGO.Database import (add_active_chat, add_active_video_chat,
                             is_active_chat, music_off, music_on,
                             remove_active_chat)
-from Yukki.Inline import (audio_markup, audio_markup2, primary_markup,
+from KIGO.Inline import (audio_markup, audio_markup2, primary_markup,
                           secondary_markup, secondary_markup2)
-from Yukki.Utilities.timer import start_timer
-from Yukki.Core.PyTgCalls.Yukki import join_stream
-from Yukki.Database import (add_active_chat, add_active_video_chat,
+from KIGO.Utilities.timer import start_timer
+from KIGO.Core.PyTgCalls.Yukki import join_stream
+from KIGO.Database import (add_active_chat, add_active_video_chat,
                             is_active_chat, music_off, music_on)
-from Yukki.Inline import (audio_markup, audio_markup2, primary_markup,
+from KIGO.Inline import (audio_markup, audio_markup2, primary_markup,
                           secondary_markup)
-from Yukki.Utilities.timer import start_timer
+from KIGO.Utilities.timer import start_timer
 
 loop = asyncio.get_event_loop()
 
