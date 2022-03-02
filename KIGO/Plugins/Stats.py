@@ -21,12 +21,12 @@ from pytgcalls import __version__ as pytgover
 
 from config import (MONGO_DB_URI, MUSIC_BOT_NAME, STRING1, STRING2, STRING3,
                     STRING4, STRING5)
-from Yukki import (ASS_CLI_1, ASS_CLI_2, ASS_CLI_3, ASS_CLI_4, ASS_CLI_5,
+from KIGO import (ASS_CLI_1, ASS_CLI_2, ASS_CLI_3, ASS_CLI_4, ASS_CLI_5,
                    BOT_ID, MUSIC_BOT_NAME, SUDOERS, app, boottime)
-from Yukki.Database import get_gbans_count, get_served_chats, get_sudoers
-from Yukki.Inline import stats1, stats2, stats3, stats4, stats5, stats6, stats7
-from Yukki.Plugins import ALL_MODULES
-from Yukki.Utilities.ping import get_readable_time
+from KIGO.Database import get_gbans_count, get_served_chats, get_sudoers
+from KIGO.Inline import stats1, stats2, stats3, stats4, stats5, stats6, stats7
+from KIGO.Plugins import ALL_MODULES
+from KIGO.Utilities.ping import get_readable_time
 
 __MODULE__ = "Stats"
 __HELP__ = """
@@ -35,6 +35,8 @@ __HELP__ = """
 /stats
 - Check the Stats of Bot.
 - Gets the stat of MongoDb , Assistant, System etc
+
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 
 
