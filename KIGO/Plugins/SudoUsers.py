@@ -9,8 +9,8 @@ from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 
 from config import LOG_SESSION, OWNER_ID, SUDO_USERS
-from Yukki import BOT_ID, BOT_USERNAME, MUSIC_BOT_NAME, OWNER_ID, SUDOERS, app
-from Yukki.Database import (add_gban_user, add_off, add_on, add_sudo,
+from KIGO import BOT_ID, BOT_USERNAME, MUSIC_BOT_NAME, OWNER_ID, SUDOERS, app
+from KIGO.Database import (add_gban_user, add_off, add_on, add_sudo,
                             get_active_chats, get_served_chats, get_sudoers,
                             is_gbanned_user, remove_active_chat,
                             remove_gban_user, remove_served_chat, remove_sudo,
@@ -42,6 +42,8 @@ Only for Sudo Users.
 
 /clean
 - Clean Temp Files and Logs.
+
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 # Add Sudo Users!
 
