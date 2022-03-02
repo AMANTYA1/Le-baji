@@ -1,5 +1,5 @@
-from Yukki import BOT_USERNAME
-from Yukki.Database.spotifylimit import get_playlist_limit_sudoers
+from kIGO import BOT_USERNAME
+from KIGO.Database.spotifylimit import get_playlist_limit_sudoers
 from config import PL_LIMIT
 import requests
 from bs4 import BeautifulSoup
