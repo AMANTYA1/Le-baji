@@ -8,8 +8,8 @@ from pyrogram.types.messages_and_media import message
 
 from config import get_queue
 from KIGO import BOT_USERNAME, db_mem
-from kIGO.Core.PyTgCalls import Queues
-from kIGO.Core.PyTgCalls.KIGO import (join_live_stream, join_video_stream,
+from KIGO.Core.PyTgCalls import Queues
+from KIGO.Core.PyTgCalls.KIGO import (join_live_stream, join_video_stream,
                                         stop_stream)
 from KIGO.Database import (add_active_chat, add_active_video_chat,
                             is_active_chat, music_off, music_on,
