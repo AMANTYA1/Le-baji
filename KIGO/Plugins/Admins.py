@@ -9,25 +9,25 @@ from pyrogram.types import (CallbackQuery, InlineKeyboardButton,
                             ReplyKeyboardMarkup, ReplyKeyboardRemove)
 
 from config import get_queue
-from Yukki import BOT_USERNAME, MUSIC_BOT_NAME, app, db_mem
-from Yukki.Core.PyTgCalls import Queues
-from Yukki.Core.PyTgCalls.Converter import convert
-from Yukki.Core.PyTgCalls.Downloader import download
-from Yukki.Core.PyTgCalls.Yukki import (pause_stream, resume_stream,
+from KIGO import BOT_USERNAME, MUSIC_BOT_NAME, app, db_mem
+from KIGO.Core.PyTgCalls import Queues
+from KIGO.Core.PyTgCalls.Converter import convert
+from KIGO.Core.PyTgCalls.Downloader import download
+from KIGO.Core.PyTgCalls.Yukki import (pause_stream, resume_stream,
                                         skip_stream, skip_video_stream,
                                         stop_stream)
-from Yukki.Database import (is_active_chat, is_music_playing, music_off,
+from KIGO.Database import (is_active_chat, is_music_playing, music_off,
                             music_on, remove_active_chat,
                             remove_active_video_chat)
-from Yukki.Decorators.admins import AdminRightsCheck
-from Yukki.Decorators.checker import checker, checkerCB
-from Yukki.Inline import audio_markup, primary_markup, secondary_markup2
-from Yukki.Utilities.changers import time_to_seconds
-from Yukki.Utilities.chat import specialfont_to_normal
-from Yukki.Utilities.theme import check_theme
-from Yukki.Utilities.thumbnails import gen_thumb
-from Yukki.Utilities.timer import start_timer
-from Yukki.Utilities.youtube import get_m3u8, get_yt_info_id
+from KIGO.Decorators.admins import AdminRightsCheck
+from KIGO.Decorators.checker import checker, checkerCB
+from KIGO.Inline import audio_markup, primary_markup, secondary_markup2
+from KIGO.Utilities.changers import time_to_seconds
+from KIGO.Utilities.chat import specialfont_to_normal
+from KIGO.Utilities.theme import check_theme
+from KIGO.Utilities.thumbnails import gen_thumb
+from KIGO.Utilities.timer import start_timer
+from KIGO.Utilities.youtube import get_m3u8, get_yt_info_id
 
 loop = asyncio.get_event_loop()
 
@@ -60,6 +60,8 @@ Only for Sudo Users
 
 /activevideo
 - Check active video calls on bot.
+
+**✗  Pᴏᴡᴇʀᴇᴅ 🔥 Bʏ: Kɪɢᴏ Dᴜɴɪʏᴀ!**
 """
 
 
