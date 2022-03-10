@@ -2,7 +2,7 @@ from os import path
 
 from yt_dlp import YoutubeDL
 
-from KIGO import MUSIC_BOT_NAME
+from Yukki import MUSIC_BOT_NAME
 
 ytdl = YoutubeDL(
     {
@@ -38,8 +38,18 @@ def download(videoid: str, mystic, title) -> str:
                 try:
                     if eta > 2:
                         mystic.edit(
-                            f"**{MUSIC_BOT_NAME} Downloader**\n\n**Title:** {title[:50]}:\n**FileSize:** {size}\n\n**<u>Downloaded:</u>**\n**Speed:** {speed}\n**ETA:** {eta} Seconds\n\n\n{percentage} ▓▓▓▓▓▓▓▓▓▓▓▓ 100%"
-                        )
+                            f"""
+**Null music Downloader**
+
+{percentage} •••••••••••••••100%
+
+ᗚ **Title:** `{title[:50]}`
+ᗚ **FileSize:** {size}
+ᗚ **Speed:** {speed}
+ᗚ **ETA:** {eta} Seconds
+ᗚ @INSANE_BOTS | @GODZILLA_X_ROBOT                                
+                            """
+                            )
                 except Exception as e:
                     pass
             if per > 250:
@@ -47,21 +57,51 @@ def download(videoid: str, mystic, title) -> str:
                     flex[str(bytesx)] += 1
                     if eta > 2:
                         mystic.edit(
-                            f"**{MUSIC_BOT_NAME}Downloader**\n\n**Title:** {title[:50]}:\n**FileSize:** {size}\n\n**<u>Downloaded:</u>**\n**Speed:** {speed}\n**ETA:** {eta} Seconds\n\n\n{percentage} ███▓▓▓▓▓▓▓▓▓ 100%"
-                        )
+                            f"""
+**Null music Downloader**
+
+{percentage} •••••••••••••••100%
+
+ᗚ **Title:** `{title[:50]}`
+ᗚ **FileSize:** {size}
+ᗚ **Speed:** {speed}
+ᗚ **ETA:** {eta} Seconds
+ᗚ @INSANE_BOTS | @GODZILLA_X_ROBOT                                
+                            """
+                            )
             if per > 500:
                 if flex[str(bytesx)] == 3:
                     flex[str(bytesx)] += 1
                     if eta > 2:
                         mystic.edit(
-                            f"**{MUSIC_BOT_NAME} Downloader**\n\n**Title:** {title[:50]}:\n**FileSize:** {size}\n\n**<u>Downloaded:</u>**\n**Speed:** {speed}\n**ETA:** {eta} Seconds\n\n\n{percentage} ██████▓▓▓▓▓▓ 100%"
+                            f"""
+**Null music Downloader**
+
+{percentage} •••••••••••••••100%
+
+ᗚ **Title:** `{title[:50]}`
+ᗚ **FileSize:** {size}
+ᗚ **Speed:** {speed}
+ᗚ **ETA:** {eta} Seconds
+ᗚ @INSANE_BOTS | @GODZILLA_X_ROBOT                                
+                            """
                         )
             if per > 800:
                 if flex[str(bytesx)] == 4:
                     flex[str(bytesx)] += 1
                     if eta > 2:
                         mystic.edit(
-                            f"**{MUSIC_BOT_NAME} Downloader**\n\n**Title:** {title[:50]}:\n**FileSize:** {size}\n\n**<u>Downloaded:</u>**\n**Speed:** {speed}\n**ETA:** {eta} Seconds\n\n\n{percentage} ██████████▓▓ 100%"
+                            f"""
+**Null music Downloader**
+
+{percentage} •••••••••••••••100%
+
+ᗚ **Title:** `{title[:50]}`
+ᗚ **FileSize:** {size}
+ᗚ **Speed:** {speed}
+ᗚ **ETA:** {eta} Seconds
+ᗚ @INSANE_BOTS | @GODZILLA_X_ROBOT       
+                            """
                         )
         if d["status"] == "finished":
             try:
@@ -70,7 +110,16 @@ def download(videoid: str, mystic, title) -> str:
                 taken = "00:00"
             size = d["_total_bytes_str"]
             mystic.edit(
-                f"**{MUSIC_BOT_NAME} Downloader**\n\n**Title:** {title[:50]}:\n\n100% ████████████100%\n\n**Time Taken:** {taken} Seconds\n\nConverting Audio[FFmpeg Process]"
+                f"""
+**Rose music Downloader**
+
+100% •••••••••••••••100%
+
+ᗚ **Title:** `{title[:50]}`
+ᗚ **Time Taken:** `{taken}` Seconds
+ᗚ Converting Audio[FFmpeg Process]
+ᗚ @INSANE_BOTS | @GODZILLA_X_ROBOT                
+                """
             )
 
     ydl_optssx = {
