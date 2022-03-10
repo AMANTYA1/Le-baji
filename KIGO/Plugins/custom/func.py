@@ -39,7 +39,7 @@ from KIGO.Utilities.youtube import get_m3u8
 from config import get_queue
 from KIGO import BOT_USERNAME, db_mem
 from KIGO.Core.PyTgCalls import Queues
-from KIGO.Core.PyTgCalls.KIGO import (join_live_stream, join_video_stream,
+from KIGO.Core.PyTgCalls.Yukki import (join_live_stream, join_video_stream,
                                         stop_stream)
 from KIGO.Database import (add_active_chat, add_active_video_chat,
                             is_active_chat, music_off, music_on,
@@ -47,7 +47,7 @@ from KIGO.Database import (add_active_chat, add_active_video_chat,
 from KIGO.Inline import (audio_markup, audio_markup2, primary_markup,
                           secondary_markup, secondary_markup2)
 from KIGO.Utilities.timer import start_timer
-from KIGO.Core.PyTgCalls.KIGO import join_stream
+from KIGO.Core.PyTgCalls.Yukki import join_stream
 from KIGO.Database import (add_active_chat, add_active_video_chat,
                             is_active_chat, music_off, music_on)
 from KIGO.Inline import (audio_markup, audio_markup2, primary_markup,
@@ -86,10 +86,14 @@ async def mplay_stream(message,MusicData):
     mystic = await message.reply_text(f"Processing:- {title[:20]}")
     await mystic.edit(
    f"""
-**KIGO Music Downloader** !
-- **Title:** `{title[:50]}`
-- **duration** :`{duration_min}`
-[📥](https://t.me/OmFoXD)■■■■■■■■■■■■
+**Null music Downloader**
+
+100% •••••••••••••••100%
+
+ᗚ **Title:** `{title[:50]}`
+ᗚ  **duration** :`{duration_min}`
+
+ᗚ @GODZILLA_X_ROBOT | @INSANE_BOTS    
                     """)
     downloaded_file = await loop.run_in_executor(
         None, download, videoid, mystic, title
