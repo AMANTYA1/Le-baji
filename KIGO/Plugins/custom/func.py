@@ -260,7 +260,7 @@ async def vplay_stream(message,VideoData,mystic):
     theme = await check_theme(chat_id)
     chat_title = await specialfont_to_normal(chat_title)
     thumb = await gen_thumb(
-                        thumbnail, title, message.from_user.id, "NOW PLAYING", views, duration_min, channel
+                        thumbnail, title, message.from_user.id, "{🇮🇳} 𝗡𝘂𝗹𝗹 𝗖𝗼𝗱𝗲𝗿™", views, duration_min, channel
                     )
     nrs, ytlink = await get_m3u8(videoid)
     if nrs == 0:
