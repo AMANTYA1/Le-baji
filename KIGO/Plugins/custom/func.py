@@ -102,7 +102,7 @@ async def mplay_stream(message,MusicData):
     theme = await check_theme(chat_id)
     chat_title = await specialfont_to_normal(chat_title)
     thumb = await gen_thumb(
-                        thumbnail, title, message.from_user.id, "NOW PLAYING", views, duration_min, channel
+                        thumbnail, title, message.from_user.id, "{🇮🇳} 𝗡𝘂𝗹𝗹 𝗖𝗼𝗱𝗲𝗿™", views, duration_min, channel
                     )
     if chat_id not in db_mem:
         db_mem[chat_id] = {}
